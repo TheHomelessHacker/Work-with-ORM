@@ -19,11 +19,12 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
-from main.views import cars_list_view, car_details_view, sales_by_car
+from main.views import greeting, cars_list_view, car_details_view, sales_by_car
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', greeting, name='greeting'),
     path('cars/', cars_list_view, name='list'),
     path('cars/<int:car_id>/', car_details_view, name='details'),
     path('cars/<int:car_id>/sales/', sales_by_car, name='sales')
